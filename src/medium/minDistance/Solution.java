@@ -11,6 +11,7 @@ public class Solution {
                 }else{
                     dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
                 }
+                printDp(dp);
             }
         // combined length of both words - double the largest substring returns min operations
         return word1.length() + word2.length() - 2 * dp[word1.length()][word2.length()];
