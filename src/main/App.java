@@ -10,11 +10,11 @@ import java.util.PriorityQueue;
 public class App {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        PriorityQueue<String> test = new PriorityQueue<>();
-        test.offer("10");
-        test.offer("1");
-        test.offer("5");
-        test.offer("20");
+        PriorityQueue<Integer> test = new PriorityQueue<>((a,b) -> a-b);
+        test.offer(10);
+        test.offer(1);
+        test.offer(5);
+        test.offer(20);
 
         while(test.size()>0){
             System.out.println(test.poll());
