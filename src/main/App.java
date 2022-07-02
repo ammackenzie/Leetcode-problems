@@ -1,14 +1,16 @@
 package main;
 
 
-import easy.maximumUnits.Solution;
+import medium.maxArea.Solution;
 
 import java.util.*;
 
 public class App {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.maximumUnits(new int[][]{{1,101},{2,90}}, 4);
+        System.out.println(solution.maxArea(
+                1000000000,
+                1000000000, new int[]{2},new int[]{2}));
     }
 
 }
