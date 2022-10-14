@@ -3,15 +3,16 @@ package main;
 
 
 
-import medium.findOriginalArray.Solution;
+
+
+import medium.stringToInteger.Solution;
 
 import java.util.*;
 
 public class App {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] properties = {1, 2, 2, 3, 4, 6};
-        solution.findOriginalArray(properties);
+        System.out.println(solution.myAtoi("9223372036854775808"));
     }
 
 }
