@@ -1,19 +1,15 @@
 package main;
 
 
+import youtube.graphs.Solution;
 
-
-
-
-import Hackerrank.pallindromIndex.Result;
-
-import java.util.*;
-
-public class App {
+class Main {
     public static void main(String[] args) {
-        System.out.println(Result.palindromeIndex("aaabaaab"));
+        Solution solution = new Solution();
+        solution.populateMatrix();
+        solution.printMatrix();
+        solution.populateAdjacencyList();
+        solution.printAdjacencyList();
+        solution.startDfsWithAdjacencyList("PHX", "BKK");
     }
-
-
-
 }
