@@ -5,24 +5,30 @@ import java.util.Arrays;
 
 public class Solution {
     public int candy(int[] ratings) {
-        int size = ratings.length;
-        if(size==0) return 1;
-        int[] left = new int[size];
-        int[] right = new int[size];
-        //left loop through
-        for(int i =1; i < size; i++){
-            if(ratings[i-1] < ratings[i]){
-                left[i] = left[i-1]+1;
+        int length = ratings.length;
+
+        if(length<=1){
+            return 1;
+        }
+        int[] leftCandies = new int[length];
+        int[] rightCandies = new int[length];
+        Arrays.fill(leftCandies, 1);
+        Arrays.fill(rightCandies, 1);
+        for(int l=1; l< length; l++){
+            if(ratings[l] > ratings[l-1]){
+                leftCandies[l] = leftCandies[l-1]+1;
             }
         }
-        for(int i =size-2; i >= 0; i--){
-            if(ratings[i+1] < ratings[i]){
-                right[i] = right[i+1]+1;
+        for(int r=length-2; r >=0; r--){
+            if(ratings[r] > ratings[r+1]){
+                leftCandies[r] = leftCandies[r+1]+1;
             }
         }
-        for(int n = 0; n < ratings.length; n++){
-            size += Math.max(left[n], right[n]);
+
+        int total = 0;
+        for(int i = 0; i < length; i++){
+            total += Math.max(leftCandies[i], rightCandies[i]);
         }
-        return size;
+        return total;
     }
 }
