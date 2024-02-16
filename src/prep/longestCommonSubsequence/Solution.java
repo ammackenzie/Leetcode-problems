@@ -11,7 +11,7 @@ public class Solution {
                 if (text1.charAt(i) == text2.charAt(j)) {
                     grid[i + 1][j + 1] = grid[i][j] + 1;
                 } else {
-                    grid[i + 1][j + 1] = Math.max(grid[i - 1][j], grid[i][j - 1]);
+                    grid[i + 1][j + 1] = Math.max(grid[i + 1][j], grid[i][j + 1]);
                 }
             }
         }
